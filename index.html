@@ -1,0 +1,114 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>SystemCalc</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <meta name="theme-color" content="#fafafa">
+
+</head>
+
+
+<body>
+
+<!--Title-->
+<div id="title"><h1>Systems of Equations Calculator</h1></div>
+
+<!--Inputs-->
+<div id="text">
+    <h4>Equation 1 (standard form)</h4>
+    <input id='a1' type="number">x + <input id='b1' type="number">y = <input id='c1' type="number">
+    <h4>Equation 2 (standard form)</h4>
+    <input id='a2' type="number">x + <input id='b2' type="number">y = <input id='c2' type="number">
+    <br>
+    <button onclick="calc()">Calculate Solution</button>
+</div>
+<br>
+<!--Graph-->
+<div id="graphbox">
+    <h3>Solution (Graphing)</h3>
+    <div id="graph" style="width: 600px; height: 400px;">
+
+    </div>
+</div>
+
+<!--Conversion to Slope-Intercept-->
+<div id="CTSIbox">
+    <h3>Converting Equations to <br> Slope-Intercept Form</h3><br>
+    <div id="convtoslformsol">
+        <p>Enter some equations to start.</p><br>
+        <!--    Fill-in programmatically-->
+    </div>
+</div>
+
+<div class="solvebox">
+    <h3>Solution (Substitution)</h3><br>
+    <!--Solution (Substitution)-->
+    <div id="solsubs">
+        <p>Enter some equations to start.</p><br>
+
+        <!--    Fill-in programmatically-->
+    </div>
+
+    <!--Solution (Elimination)-->
+    <h3>Solution (Elimination)</h3><br>
+    <div id="solelim">
+        <p>Enter some equations to start.</p>
+        <br>
+
+        <!--    Fill-in programmatically-->
+    </div>
+</div>
+
+<!--Answer-->
+<h2 id="answer"></h2>
+
+<!--Main scripts-->
+<script src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script src="https://www.desmos.com/api/v1.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+
+<!--Graph constructor-->
+<script>
+    let elt = document.getElementById('graph');
+    let calculator = Desmos.GraphingCalculator(elt, {
+        expressions: false,
+        keypad: false,
+        // lockViewport: true,
+        pointsOfInterest: false,
+        settingsMenu: false,
+        invertedColors: true
+    });
+
+
+</script>
+
+<!--MathJax import-->
+<script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+    };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</body>
+
+</html>
