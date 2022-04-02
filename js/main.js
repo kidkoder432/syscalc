@@ -9,21 +9,26 @@ function gcd(a, b) {
     
     while (b !== 0) {
         if (a > b) a = a - b; else b = b - a;
+        console.log(a, b)
     }
     
     return a;
     
 }
 
-function addFractions(a, b, c, d) {
+function addFractions(a, b, c, d, render=true) {
     let newDenom;
     
-    if (b !== d) {
-        newDenom = lcm(b, d)
-        a *= (newDenom / b)
-        c *= (newDenom / d)
+    newDenom = lcm(b, d)
+    a *= (newDenom / b)
+    c *= (newDenom / d)
+
+    if (render) {
+        return simplify(a + c, newDenom)   
     }
-    return simplify(a + c, newDenom)
+    else {
+        return [a + c, newDenom]
+    }
 }
 
 function lcm(a, b) {
@@ -46,9 +51,7 @@ function simplify(a, b) {
 }
 
 function cancel(cfa, cfb, ra, rb) {
-    if (cfb === rb) {
-        return simplify(cfa * cfb, cfb) + 'x = ' + simplify(ra * rb, rb)
-    }
+    return `x &= ${simplify(Math.round(ra * cfa), Math.round(rb * cfb))}`;
 }
 
 window.onload = function () {
@@ -138,6 +141,8 @@ function calc() {
             $
          `;
     
+    let cfa, cfb = addFractions(-a1, b1, a2, b2, false);
+    let ra, rb = addFractions(-c1, b1, c2, b2, false);
     
     document.getElementById('solsubs').innerText = String.raw`
             $\begin{aligned}
@@ -147,6 +152,7 @@ function calc() {
             ${int1Latex} &= -${addFractions(-a1, b1, a2, b2)}x + ${int2Latex}\\
             0 &= -${addFractions(-a1, b1, a2, b2)}x + ${addFractions(-c1, b1, c2, b2)}\\
             ${addFractions(-a1, b1, a2, b2)}x &= ${addFractions(-c1, b1, c2, b2)}\\
+            ${cancel(cfa, cfb, ra, rb)}\\
             \end{aligned}
             $
          `;
