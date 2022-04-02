@@ -1,3 +1,4 @@
+/*noinspection CssUnknownTarget*/
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Roboto+Mono&display=swap'); /*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
 
 /* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
@@ -11,8 +12,9 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+/*noinspection ALL*/
 html {
-    color: #222;
+    color: #222222;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -45,7 +47,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #cccccc;
     margin: 1em 0;
     padding: 0;
 }
@@ -91,10 +93,10 @@ body {
     display: flex;
     flex-wrap: wrap;
 
-    color: white;
+    color: #ffffff;
     background-color: #222222;
     margin: 50px;
-    font-family: "Roboto Mono";
+    font-family: "Roboto Mono", monospace;
 }
 
 body div {
@@ -104,10 +106,10 @@ body div {
 input {
     margin: -1px;
     background-color: #444444;
-    padding: 0px;
-    color: white;
-    font-family: 'Roboto Mono';
-    font-size: 14;
+    padding: 0;
+    color: #ffffff;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14pt;
     border: none;
     width: 2ch;
     transition: background 200ms, color 200ms;
@@ -129,11 +131,11 @@ input::-webkit-inner-spin-button {
 
 button {
     margin: 2px;
-    font-family: 'Roboto Mono';
-    font-size: 14;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 14pt;
     border-radius: 5px;
-    border: 2px solid darkcyan;
-    color: lightgray;
+    border: 2px solid #008b8b;
+    color: #d3d3d3;
     background-color: #222222;
     transition: background 200ms, color 200ms;
 
@@ -146,7 +148,7 @@ h2 {
 
 button:hover {
     background-color: #444444;
-    color: white;
+    color: #ffffff;
 }
 
 #title {
@@ -154,8 +156,9 @@ button:hover {
 }
 
 
-#convtoslformsol {
+#convtoslformsol, #solsubs, #solelim {
     width: 100%;
+    text-align: center;
 }
 
 #solvebox {
@@ -281,8 +284,8 @@ p {
     *,
     *::before,
     *::after {
-        background: #fff !important;
-        color: #000 !important;
+        background: #ffffff !important;
+        color: #000000 !important;
         /* Black prints faster */
         box-shadow: none !important;
         text-shadow: none !important;
@@ -316,7 +319,7 @@ p {
 
     pre,
     blockquote {
-        border: 1px solid #999;
+        border: 1px solid #999999;
         page-break-inside: avoid;
     }
 

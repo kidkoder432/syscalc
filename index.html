@@ -103,7 +103,10 @@
 <script>
     MathJax = {
         tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+            processEscapes: false,
+            displayAlign: 'center'
         },
     };
 </script>
