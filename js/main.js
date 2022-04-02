@@ -8,7 +8,6 @@ function round(n, places) {
 
 function gcd(a, b) {
     let sa = Math.sign(a);
-    Math.sign(b);
     a = Math.abs(a);
     b = Math.abs(b);
     if (0 === a) {
